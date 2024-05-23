@@ -1,0 +1,76 @@
+---
+import Logo from '../components/icons/Logo.astro'
+import ArrowTop from '../components/icons/ArrowTop.astro'
+import Navigation from './Navigation.astro'
+const homeUrl = import.meta.env.BASE_URL
+---
+
+<div class="footer__pre">
+  <p class="footer__pre-en">Advance for myself,<br />Design the future</p>
+  <p class="footer__pre-ja">私<i>が</i><i>、</i>つくる<i>。</i>新たなミライ。</p>
+</div>
+<footer class="footer">
+  <div class="footer__head">
+    <a href={homeUrl} class="footer__head-logo">
+      <Logo />
+    </a>
+    <button class="footer__head-toTheTopButton">
+      <ArrowTop />
+    </button>
+  </div>
+  <div class="footer__body">
+    <nav class="footer__body__nav1">
+      <ul class="footer__body__nav1-list hover-listItem-underline">
+        <li class="footer__body__nav1-list-item">
+          <a
+            href="https://www.aioinissaydowa.co.jp/about.html"
+            class="footer__body__nav1-list-item-link">当ホームページのご利用について</a
+          >
+        </li>
+        <li class="footer__body__nav1-list-item">
+          <a
+            href="https://www.aioinissaydowa.co.jp/corporate/policy/privacy.html"
+            class="footer__body__nav1-list-item-link">個人情報保護方針</a
+          >
+        </li>
+        <li class="footer__body__nav1-list-item">
+          <a
+            href="https://www.aioinissaydowa.co.jp/corporate/policy/invitation.html"
+            class="footer__body__nav1-list-item-link">勧誘方針</a
+          >
+        </li>
+        <li class="footer__body__nav1-list-item">
+          <a
+            href="https://www.aioinissaydowa.co.jp/sitemap.html"
+            class="footer__body__nav1-list-item-link">サイトマップ</a
+          >
+        </li>
+        <li class="footer__body__nav1-list-item">
+          <a href="https://www.ms-ad-hd.com/ja/index.html" class="footer__body__nav1-list-item-link"
+            >MS&ADホールディングス</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <nav class="footer__body__nav2">
+      <Navigation />
+    </nav>
+  </div>
+  <div class="footer__foot">
+    <p class="footer__foot-small">
+      <small>Copyright © Aioi Nissay Dowa Insurance Co., Ltd. All rights reserved.</small>
+    </p>
+  </div>
+</footer>
+
+<script>
+  const toTheTopButton = document.querySelector('.footer__head-toTheTopButton')
+  if (toTheTopButton) {
+    toTheTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
+    })
+  }
+</script>

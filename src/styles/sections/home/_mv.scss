@@ -1,0 +1,206 @@
+.mv {
+  position: relative;
+  @include sp {
+    margin-top: 5rem;
+  }
+  &__imageArea {
+    position: relative;
+  }
+  &__slider {
+    picture {
+      height: 100vh;
+      @include sp {
+        height: 47.6rem;
+      }
+      // img {
+      //   transform: scale(1.1);
+      // }
+    }
+  }
+  //scroll
+  @keyframes scroll {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  &__scroll {
+    position: absolute;
+    right: 7.5rem;
+    bottom: -6.4rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    @include sp {
+      bottom: -5rem;
+      right: 2.5rem;
+    }
+    &-text {
+      color: $color1;
+      font-family: $sans;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.024rem;
+      writing-mode: vertical-lr;
+      @include sp {
+        font-size: 1rem;
+        letter-spacing: 0.02rem;
+      }
+    }
+    &-line {
+      height: 16rem;
+      width: 1px;
+      margin-top: 0.8rem;
+      position: relative;
+      overflow: hidden;
+      background-color: $color1;
+      @include sp {
+        height: 10rem;
+        margin-top: 0.5rem;
+      }
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: white;
+        animation: scroll 2.5s ease-in-out infinite;
+      }
+    }
+  }
+  //title
+  &__title {
+    width: 70rem;
+    position: absolute;
+    bottom: 6.4rem;
+    height: 22.1rem;
+    left: 6.4rem;
+    z-index: 2;
+    overflow: hidden;
+    @include sp {
+      position: static;
+      width: 100%;
+    }
+    &-whiteBg {
+      background-color: white;
+      position: absolute;
+      left: 0;
+      transform: translateX(-120%);
+      @include sp {
+        display: none;
+      }
+      &.bg-1 {
+        width: 100%;
+        height: 9.4rem;
+        top: 0;
+      }
+      &.bg-2 {
+        height: 13.3rem;
+        width: 61rem;
+        bottom: 0;
+      }
+    }
+    &__text {
+      position: relative;
+      padding: 0.7rem 0 0 2.5rem;
+      @include sp {
+        padding: 2.2rem 0 0 2rem;
+      }
+      &-en {
+        font-family: $sans;
+        font-size: 6.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 7.2rem; /* 112.5% */
+        letter-spacing: 0.064rem;
+        padding-bottom: 1.7rem;
+        clip-path: inset(0 100% 0 0);
+        // background: linear-gradient(
+        //   270deg,
+        //   $color1 0%,
+        //   $color1 93.43%,
+        //   #00c7d4 93.43%,
+        //   #1477ae 100%
+        // );
+        background: linear-gradient(
+          270deg,
+          $color1 0%,
+          $color1 46.7%,
+          #00c7d4 46.7%,
+          #1477ae 50%,
+          #1477ae 50%,
+          #00c7d4 100%
+        );
+        background-size: 200% 100%;
+        background-position-x: 0%;
+        display: block;
+        color: transparent;
+        background-clip: text;
+        @include sp {
+          font-size: 3.8rem;
+          line-height: 4.2rem; /* 110.526% */
+          padding-bottom: 1.1rem;
+          color: $color1;
+          i {
+            display: inline-block;
+            background: linear-gradient(270deg, #00c7d4 0%, #1477ae 100%);
+            background-clip: text;
+            color: transparent;
+          }
+        }
+      }
+      &-ja {
+        font-size: 2.4rem;
+        letter-spacing: 0.024rem;
+        font-weight: 600;
+        display: block;
+        padding: 0 0 0 0.3rem;
+        opacity: 0;
+        @include sp {
+          font-size: 1.8rem;
+          letter-spacing: 0.018rem;
+          padding-bottom: 0.2rem;
+        }
+        i:nth-child(1) {
+          letter-spacing: 0.12rem;
+          @include sp {
+            letter-spacing: 0.09rem;
+          }
+        }
+        i:nth-child(2) {
+          letter-spacing: -0.96rem;
+          @include sp {
+            letter-spacing: -0.72rem;
+          }
+        }
+        i:nth-child(3) {
+          letter-spacing: -0.24rem;
+          @include sp {
+            letter-spacing: -0.18rem;
+          }
+        }
+      }
+      &-sub {
+        position: absolute;
+        bottom: 0.4rem;
+        right: 13.9rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 2.3934rem; /* 170.96% */
+        letter-spacing: 0.07rem;
+        opacity: 0;
+        @include sp {
+          font-size: 1.2rem;
+          letter-spacing: 0.06rem;
+          position: static;
+        }
+      }
+    }
+  }
+}

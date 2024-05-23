@@ -1,0 +1,159 @@
+.hero {
+  position: relative;
+  margin-top: 10.5rem;
+  @include sp {
+    margin-top: 5rem;
+  }
+  &__picture {
+    width: vw(1138px);
+    height: vw(500px);
+    margin-left: auto;
+    @include sp {
+      width: 100%;
+      height: 24rem;
+    }
+  }
+  &__text {
+    position: absolute;
+    left: vw(80px);
+    top: vw(267px);
+    @include sp {
+      position: static;
+    }
+  }
+  &__text-sup {
+    font-size: vw(16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    letter-spacing: vw(0.48px);
+    margin-bottom: vw(20px);
+    @include sp {
+      font-size: 1.2rem;
+      letter-spacing: 0.036rem;
+      margin: 1.9rem 1rem 1rem 1.5rem;
+    }
+  }
+  // &__text-title {
+  //   @include sp {
+  //     max-width: 25.8rem;
+  //   }
+  // }
+  &__text-index {
+    font-size: vw(15px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    background-color: white;
+    width: vw(44px);
+    height: vw(24px);
+    border-radius: vw(26px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $sans;
+    margin-right: vw(11px);
+    transform: translateY(vw(3px));
+    @include sp {
+      font-size: 1rem;
+      width: 3.1rem;
+      height: 1.7rem;
+      border-radius: 2rem;
+      margin-right: 0.5rem;
+      transform: translateY(0.3rem);
+    }
+  }
+  &__text-line {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    padding: vw(2px) vw(24px) vw(10px) vw(24px);
+    color: #fff;
+    font-size: vw(44px);
+    font-weight: 600;
+    letter-spacing: vw(0.4px);
+    line-height: 1.2;
+    @include sp {
+      font-size: 2.4rem;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.024rem;
+      padding: 0.3rem 1rem 0.3rem 1.9rem;
+    }
+    &.color1 {
+      background-color: $color1;
+    }
+    &.sp-hide {
+      @include sp {
+        display: none;
+      }
+    }
+    &.pc-hide {
+      @include pc {
+        display: none;
+      }
+    }
+  }
+  //interview box
+  &__box {
+    position: absolute;
+    bottom: 0;
+    right: 5.6rem;
+    width: 23rem;
+    height: 17rem;
+    border-radius: 1.2rem 1.2rem 0rem 0rem;
+    background: #fff;
+    padding: 2.4rem 2.4rem 0;
+    @include sp {
+      position: static;
+      padding: 3.3rem 2rem 0;
+      width: 100%;
+    }
+  }
+  &__box-content {
+    @include sp {
+      border-bottom: 1px solid #e6eae9;
+      padding-bottom: 2.8rem;
+    }
+  }
+  &__box-category {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 2rem;
+    border-radius: 2.6rem;
+    display: inline-block;
+    padding: 0 1.2rem;
+  }
+  &__box-name {
+    margin-top: 1.6rem;
+    padding-top: 1.7rem;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.02rem;
+    border-top: 1px solid #e6eae9;
+    @include sp {
+      font-size: 1.8rem;
+      line-height: 2.4rem; /* 133.333% */
+      letter-spacing: 0.018rem;
+      border-top: none;
+      margin-top: 1rem;
+      padding-top: 0;
+    }
+  }
+  &__box-position {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5rem; /* 136.364% */
+    letter-spacing: 0.011rem;
+    color: #879390;
+    margin-top: 0.5rem;
+    @include sp {
+      font-size: 1.2rem;
+      line-height: 1.5rem; /* 125% */
+      letter-spacing: 0.012rem;
+      margin-top: 0.8rem;
+      white-space: wrap;
+    }
+  }
+}

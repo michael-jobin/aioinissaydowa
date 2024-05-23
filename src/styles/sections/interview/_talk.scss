@@ -1,0 +1,86 @@
+.talk {
+  padding: 5.2rem 0 12rem;
+  @include sp {
+    padding: 7.7rem 2.2rem 0;
+  }
+  &__container {
+    max-width: 105.8rem;
+    margin: auto;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &:not(:last-child) {
+      margin-bottom: 13em;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    @include sp {
+      flex-direction: column !important;
+      &:not(:last-child) {
+        margin-bottom: 7.2rem;
+      }
+    }
+  }
+  &__item__text {
+    width: 44.6rem;
+    padding-top: 0.3rem;
+    @include sp {
+      width: 100%;
+    }
+  }
+  &__item__text-index {
+    color: $color1;
+    font-family: $sans;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 2rem; /* 166.667% */
+    @include sp {
+      font-size: 1.4rem;
+    }
+  }
+  &__item__text-question {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 3.2rem; /* 160% */
+    margin: 1rem 0 2.7rem;
+    @include sp {
+      font-size: 1.8rem;
+      line-height: 2.8rem; /* 155.556% */
+      margin: 0.4rem 0 3rem;
+    }
+  }
+  &__item__text-paragraph {
+    text-align: justify;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 3rem; /* 214.286% */
+    // &:not(:last-child) {
+    //   margin-bottom: 2rem;
+    // }
+    @include sp {
+      font-size: 1.4rem;
+      line-height: 3.2rem;
+      // &:not(:last-child) {
+      //   margin-bottom: 1.6rem;
+      // }
+    }
+  }
+  &__item__text-small {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    text-align: justify;
+  }
+  &__item__image {
+    width: 51.3rem;
+    @include sp {
+      width: 100%;
+      margin-top: 2.2rem;
+    }
+    picture {
+      margin-top: 0.8rem;
+    }
+  }
+}

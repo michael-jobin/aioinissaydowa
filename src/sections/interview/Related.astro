@@ -1,0 +1,32 @@
+---
+import { getAreaFromTitle } from '../../utils/dataFinder.ts'
+import ArrowRight from '../../components/icons/ArrowRight.astro'
+import Picture from '../../components/Picture.astro'
+const homeUrl = import.meta.env.BASE_URL
+const { areaTitle, color } = Astro.props
+const area = getAreaFromTitle(areaTitle)
+if (!area) throw new Error(`Area not found: ${areaTitle}`)
+---
+
+<section class="related inview fadeIn">
+  <a href={`${homeUrl}${area.slug}`} class="related__container">
+    <Picture
+      cl="related__picture cover"
+      src={`${homeUrl}assets/images/${area.slug}/related_img01`}
+      alt={area.title}
+      width="1227"
+      height="500"
+      format=".png"
+    />
+    <div class="related__text">
+      <h2 class="related__text-title">
+        <span class={`category-color ${color}`}>{area.index}</span>{area.title}
+      </h2>
+      <p class="related__text-copy pre-line">{area.copy1}</p>
+    </div>
+    <p class={`related__button category-bg ${color}`}>
+      <span>詳しく見る</span>
+      <ArrowRight />
+    </p>
+  </a>
+</section>

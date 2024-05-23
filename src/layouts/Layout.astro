@@ -1,0 +1,118 @@
+---
+import '@fontsource-variable/noto-sans-jp'
+import '@fontsource/poppins/400.css'
+import '@fontsource/poppins/500.css'
+import '@fontsource/poppins/600.css'
+import '../styles/style.scss'
+import Menu from '../components/Menu.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = '人的資本経営｜あいおいニッセイ同和損害保険株式会社',
+  description = 'あいおいニッセイ同和損保の人的資本経営に関するサイトです。',
+} = Astro.props as Props
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="https://www.aioinissaydowa.co.jp/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <Menu />
+    <Header />
+    <Header class="is-fixed" />
+    <main class="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  // adapt height to the viewport
+  const setViewportHeight = (): void => {
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
+  setViewportHeight()
+  window.addEventListener('resize', setViewportHeight)
+
+  // sp scroll containers
+  const scrollContainers = document.querySelectorAll('.scroll-container')
+  if (scrollContainers.length) {
+    scrollContainers.forEach((container) => {
+      container.addEventListener('touchstart', () => {
+        container.classList.add('touched')
+      })
+    })
+  }
+
+  // inview observer
+  const inview = document.querySelectorAll('.inview')
+  if (inview.length) {
+    inview.forEach((element) => {
+      let observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              element.classList.add('viewed')
+              observer.unobserve(entry.target)
+            }
+          })
+        },
+        { rootMargin: '0px' }
+      )
+
+      observer.observe(element)
+    })
+  }
+  // show fixed elements when scrolling
+  function checkScroll(): void {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop
+    const windowHeight = window.innerHeight
+    if (scrollPosition > windowHeight) {
+      document.body.classList.add('show-fixed-elements')
+    } else {
+      document.body.classList.remove('show-fixed-elements')
+    }
+  }
+
+  function throttle(func: () => void, limit: number): () => void {
+    let lastFunc: ReturnType<typeof setTimeout> | undefined
+    let lastRan: number | undefined
+    return function () {
+      if (!lastRan) {
+        func()
+        lastRan = Date.now()
+      } else {
+        clearTimeout(lastFunc)
+        lastFunc = setTimeout(
+          () => {
+            if (Date.now() - (lastRan as number) >= limit) {
+              func()
+              lastRan = Date.now()
+            }
+          },
+          limit - (Date.now() - (lastRan as number))
+        )
+      }
+    }
+  }
+
+  const throttledCheckScroll = throttle(checkScroll, 100)
+  checkScroll()
+  window.addEventListener('scroll', throttledCheckScroll)
+</script>

@@ -1,0 +1,12 @@
+---
+import Box from './Box.astro'
+import type { BoxeDetail } from '../../types/Area'
+const area = Astro.props.area
+const color = area.category === '人財の強化' ? 'category1' : 'category2'
+---
+
+<section class="boxList">
+  <div class="boxList__container">
+    {area.boxes.map((box: BoxeDetail) => <Box box={box} color={color} />)}
+  </div>
+</section>

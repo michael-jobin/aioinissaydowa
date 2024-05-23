@@ -1,0 +1,106 @@
+---
+import ArrowRight from '../../components/icons/ArrowRight.astro'
+import areasList from '../../data/areasList.json'
+import type { Area } from '../../types/Area.ts'
+import Picture from '../../components/Picture.astro'
+const homeUrl = import.meta.env.BASE_URL
+---
+
+<section class="areas">
+  <div class="areas__container">
+    <h2 class="areas__title inview fadeIn">人的資本経営</h2>
+    <p class="areas__copy inview fadeIn">
+      組織の土台に必ず「人」がおり、一人ひとりの成長が会社の成長となり、大きな目標であるMISSION達成に直結していきます。<br
+      />だからこそ、あいおいニッセイ同和損保では人を「財産」と捉え、人的資本経営に注力し、惜しみなく投資します。
+    </p>
+    <div class="areas__shema inview fadeIn">
+      <div class="areas__shema__head">
+        <Picture
+          cl="areas__shema__head-picture"
+          src={`${homeUrl}assets/images/home/area_img01`}
+          alt="人的資本経営"
+          width="2117"
+          height="1016"
+          format=".png"
+        />
+      </div>
+      <div class="areas__shema__body">
+        <div class="areas__shema__body-titleArea">
+          <h3 class="areas__shema__body-title">CSV×DXとは？</h3>
+          <p class="areas__shema__body-button pc">
+            <a href="https://www.aioinissaydowa.co.jp/corporate/about/csvdx_statement.html"
+              >詳しく見る<ArrowRight /></a
+            >
+          </p>
+        </div>
+        <p class="areas__shema__body-text">
+          CSV（Creating Shared Value）とは社会との共通価値を創造していくこと、DX（Digital
+          Transformation）とはデータ・デジタル技術を活用し、価値提供を変革させることを意味しています。私たちは、未知のリスクや社会・地域の課題と向き合い、皆さまとともに保険の価値を進化させ、その価値の連鎖でより良い未来をつくることに挑戦していきたいと考えています。
+        </p>
+        <p class="areas__shema__body-button sp">
+          <a href="https://www.aioinissaydowa.co.jp/corporate/about/csvdx_statement.html"
+            >詳しく見る<ArrowRight /></a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="areas__listsContainer">
+      <div class="areas__list">
+        <h4 class="areas__list-title category-bg category1">人財の強化</h4>
+        <div class="areas__list-block inview fadeIn">
+          {
+            areasList
+              .filter((area: Area) => area.category === '人財の強化')
+              .map((area: Area) => (
+                <article class="areas__list-item">
+                  <p class="areas__list-item-title category-color category1">
+                    <span class="category-bg category1">{area.index}</span>
+                    {area.title}
+                  </p>
+                  <p class="areas__list-item-copy">{area.description}</p>
+                  <p class="areas__list-item-button">
+                    {area.active ? (
+                      <a href={`${homeUrl}${area.slug}/`}>
+                        詳しく見る
+                        <ArrowRight />
+                      </a>
+                    ) : (
+                      <span>Coming soon</span>
+                    )}
+                  </p>
+                </article>
+              ))
+          }
+        </div>
+      </div>
+      <div class="areas__list">
+        <h4 class="areas__list-title category-bg category2">組織の活性化</h4>
+        <div class="areas__list-block inview fadeIn">
+          {
+            areasList
+              .filter((area: Area) => area.category === '組織の活性化')
+              .map((area: Area) => (
+                <article class="areas__list-item">
+                  <p class="areas__list-item-title category-color category2">
+                    <span class="category-bg category2">{area.index}</span>
+                    {area.title}
+                  </p>
+                  <p class="areas__list-item-copy">{area.description}</p>
+                  <p class="areas__list-item-button">
+                    {area.active ? (
+                      <a href={`${homeUrl}${area.slug}/`}>
+                        詳しく見る
+                        <ArrowRight />
+                      </a>
+                    ) : (
+                      <span>Coming soon</span>
+                    )}
+                  </p>
+                </article>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

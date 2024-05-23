@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Hero from '../../components/Hero.astro'
+import About from '../../sections/interview/About.astro'
+import Talk from '../../sections/interview/Talk.astro'
+import Related from '../../sections/interview/Related.astro'
+// props & params
+import { getInterviewFromSlug } from '../../utils/dataFinder.ts'
+import interviewList from '../../data/interviewsList.json'
+export async function getStaticPaths() {
+  const paths = interviewList.map((interview) => ({
+    params: { interview: interview.slug },
+    props: {
+      metaTitle: interview.metaTitle,
+      metaDescription: interview.metaDescription,
+    },
+  }))
+
+  return paths
+}
+const { metaTitle, metaDescription } = Astro.props
+const interview = getInterviewFromSlug(Astro.params.interview)
+if (!interview) throw new Error(`No interview found`)
+const color = interview.category === '人財の強化' ? 'category1' : 'category2'
+---
+
+<Layout title={metaTitle} description={metaDescription}>
+  <Hero
+    copy={`社員インタビュー ${interview.index}`}
+    title={interview.copy1}
+    slug={interview.slug}
+    color={color}
+    isInterview={true}
+    area={interview.area}
+    name={interview.name}
+    position={interview.position}
+    titleSp={interview.copy1sp}
+  />
+
+  <About title={interview.about.title} text={interview.about.text} />
+
+  <Talk interview={interview} />
+
+  <Related areaTitle={interview.area} color={color} />
+</Layout>

@@ -1,0 +1,178 @@
+---
+import Opening from '../../components/Opening.astro'
+import Picture from '../../components/Picture.astro'
+const homeUrl = import.meta.env.BASE_URL
+---
+
+<Opening />
+<section class="mv">
+  <div class="mv__imageArea">
+    <div class="mv__slider swiper">
+      <div class="swiper-wrapper">
+        {
+          Array.from({ length: 6 }).map((_, i) => (
+            <div class="swiper-slide">
+              <Picture
+                cl="cover"
+                src={`${homeUrl}assets/images/home/mv_img0${i + 1}`}
+                alt="社員"
+                width="2880"
+                height="1920"
+                format=".png"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="mv__scroll text-fadeIn">
+      <p class="mv__scroll-text">SCROLL</p>
+      <div class="mv__scroll-line"></div>
+    </div>
+  </div>
+  <div class="mv__title">
+    <div class="mv__title-whiteBg bg-1"></div>
+    <div class="mv__title-whiteBg bg-2"></div>
+    <h1 class="mv__title__text">
+      <span class="mv__title__text-en"
+        ><i>A</i>dvance <br class="sp" />for myself,<br /><i>D</i>esign the future</span
+      >
+      <span class="mv__title__text-ja text-fadeIn">
+        私<i>が</i><i>、</i>つくる<i>。</i>新たなミライ。
+      </span>
+      <span class="mv__title__text-sub text-fadeIn">ー人的資本経営への取り組みー</span>
+    </h1>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap'
+  import Swiper from 'swiper'
+  import { Autoplay, EffectFade } from 'swiper/modules'
+  import 'swiper/css'
+  import 'swiper/css/autoplay'
+  import 'swiper/css/effect-fade'
+
+  const opening = document.querySelector('.opening') as HTMLElement
+  const images = Array.from(document.querySelectorAll('.mv__slider img')) as HTMLImageElement[]
+  const startZoomAnimation = (index: number) => {
+    gsap.fromTo(
+      images[index],
+      {
+        scale: 1.09,
+      },
+      {
+        scale: 1,
+        duration: 7.2,
+        ease: 'none',
+      }
+    )
+  }
+  const startSlider = () => {
+    const swiper = new Swiper('.mv__slider', {
+      modules: [Autoplay, EffectFade],
+      loop: true,
+      speed: 2000,
+      effect: 'fade',
+      allowTouchMove: false,
+
+      autoplay: {
+        delay: 5000,
+      },
+      on: {
+        slideChangeTransitionStart: (swiper) => {
+          startZoomAnimation(swiper.realIndex)
+        },
+        slideChangeTransitionEnd: (swiper) => {
+          gsap.set(images[swiper.previousIndex], {
+            scale: 1.1,
+          })
+        },
+      },
+    })
+    startZoomAnimation(swiper.realIndex)
+  }
+
+  if (!sessionStorage.getItem('openingSeen')) {
+    const tl = gsap.timeline()
+    tl.fromTo(
+      '.opening__logo',
+      {
+        opacity: 0,
+        filter: 'blur(5px)',
+        scale: 0.98,
+      },
+      {
+        duration: 1.5,
+        filter: 'blur(0px)',
+        opacity: 1,
+        scale: 1,
+        onComplete: () => {
+          startSlider()
+        },
+      }
+    )
+      .to(opening, {
+        opacity: 0,
+        delay: 1,
+        duration: 1.5,
+        ease: 'power3.out',
+        onComplete: () => {
+          opening.remove()
+        },
+      })
+      .fromTo(
+        '.mv__title-whiteBg',
+        {
+          x: '-120%',
+        },
+        {
+          x: '0%',
+          stagger: 0.05,
+          duration: 2,
+          ease: 'expo.inOut',
+        },
+        '-=1.4'
+      )
+      .to(
+        '.mv__title__text-en',
+        {
+          duration: 2,
+          clipPath: 'inset(0 0% 0 0)',
+          ease: 'expo.inOut',
+        },
+        '-=1.1'
+      )
+      .to(
+        '.mv__title__text-en',
+        {
+          duration: 2,
+          backgroundPositionX: '100%',
+          ease: 'expo.out',
+        },
+        '-=0.3'
+      )
+      .fromTo(
+        '.text-fadeIn',
+        {
+          opacity: 0,
+          filter: 'blur(5px)',
+        },
+        {
+          opacity: 1,
+          duration: 4,
+          filter: 'blur(0px)',
+          stagger: 0.2,
+          ease: 'power4.out',
+        },
+        '-=1'
+      )
+  } else {
+    opening.remove()
+    gsap.set('.mv__title-whiteBg', { x: '0%' })
+    gsap.set('.mv__title__text-en', { clipPath: 'inset(0 0 0 0)', backgroundPositionX: '100%' })
+    gsap.set('.text-fadeIn', { opacity: 1, filter: 'blur(0px)' })
+    startSlider()
+  }
+  sessionStorage.setItem('openingSeen', 'true')
+</script>

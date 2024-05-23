@@ -1,0 +1,10 @@
+---
+const { cl, src, alt, format, width, height, noSp } = Astro.props
+---
+
+<picture class={cl}>
+  {noSp ? null : <source media="(max-width: 768px)" srcset={`${src}_sp.webp`} type="image/webp" />}
+  {noSp ? null : <source media="(max-width: 768px)" srcset={`${src}_sp${format}`} />}
+  <source srcset={`${src}.webp`} type="image/webp" />
+  <img src={`${src}${format}`} alt={alt} width={width} height={height} />
+</picture>

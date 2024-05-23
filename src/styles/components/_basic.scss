@@ -1,0 +1,74 @@
+.basic {
+  &-button {
+    &.center {
+      text-align: center;
+    }
+    a {
+      border-radius: 7.2rem;
+      background: $color1;
+      color: #fff;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 2.2rem; /* 146.667% */
+      letter-spacing: 0.075rem;
+      height: 4.7rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0 2rem 0 2.4rem;
+      border: 1px solid $color1;
+      @include pc {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          background: #fff;
+          color: $color1;
+          svg {
+            transform: translate3d(0.5rem, 0, 0);
+            fill: $color1;
+          }
+        }
+      }
+      @include sp {
+        font-size: 1.4rem;
+        letter-spacing: 0.028rem;
+        height: 4rem;
+        padding: 0 2rem 0 2rem;
+        gap: 1.3rem;
+      }
+      svg {
+        width: 2.1rem;
+        fill: #fff;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+  &-title {
+    &-en {
+      color: $color1;
+      font-family: $sans;
+      font-size: 5.4rem;
+      font-weight: 500;
+      line-height: 6.4rem; /* 118.519% */
+      letter-spacing: 0.054rem;
+      @include sp {
+        font-size: 3.6rem;
+        line-height: 3.6rem; /* 100% */
+        letter-spacing: 0.036rem;
+      }
+    }
+    &-ja {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 2rem; /* 142.857% */
+      letter-spacing: 0.07rem;
+      margin-top: 0.9rem;
+      @include sp {
+        font-size: 1.2rem;
+        line-height: 1.5919rem; /* 132.662% */
+        letter-spacing: 0.06rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+---
+import ArrowRight from '../components/icons/ArrowRight.astro'
+import Picture from '../components/Picture.astro'
+const interview = Astro.props.interview
+const homeUrl = import.meta.env.BASE_URL
+---
+
+<aside class="fixedLink">
+  <a href={`${homeUrl}interview/${interview.slug}`}>
+    <Picture
+      cl="fixedLink__picture cover"
+      src={`${homeUrl}assets/images/interview/${interview.slug}/fixedLink_img01`}
+      alt={interview.name}
+      width="120"
+      height="120"
+      format=".png"
+    />
+    <div class="fixedLink__text">
+      <p class="fixedLink__text-index">Interview {interview.index}</p>
+      <p class="fixedLink__text-copy1 pre-line">{interview.copy1}</p>
+      <p class="fixedLink__text-copy2">{interview.copy2}</p>
+      <p class="fixedLink__text-arrow">
+        <span>社員の声を聞く</span>
+        <ArrowRight />
+      </p>
+    </div>
+  </a>
+</aside>

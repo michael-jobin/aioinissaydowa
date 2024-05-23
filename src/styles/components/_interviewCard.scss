@@ -1,0 +1,160 @@
+.interviews__card {
+  &-item {
+    padding: 2rem;
+    @include sp {
+      padding: 1rem;
+    }
+    &.hidden {
+      .interviews__card-card::after {
+        opacity: 0;
+      }
+    }
+  }
+  &-card {
+    display: block;
+    position: relative;
+    width: 32.6rem;
+    height: 39.4rem;
+    background: #fff;
+    @include pc {
+      &:not(.comingsoon):hover {
+        img {
+          transform: scale(1.05);
+        }
+        &::after {
+          opacity: 7;
+        }
+      }
+    }
+    @include sp {
+      width: 26.8rem;
+      height: 32.5rem;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      box-shadow: 0px 0px 3rem 0px rgba(0, 108, 96, 0.4);
+      border-radius: 1.2rem;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: opacity 0.3s ease-in;
+      opacity: 0.5;
+      @include sp {
+        border-radius: 0.8rem;
+      }
+    }
+    &.comingsoon {
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 15.7rem;
+      }
+    }
+  }
+  &-index {
+    font-family: $sans;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 2rem; /* 200% */
+    border-radius: 1.2rem 0rem 1.2rem 0rem;
+    background: #fff;
+    width: 9.1rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    @include sp {
+      width: 8rem;
+      height: 2.2rem;
+      font-size: 1rem;
+      line-height: 2rem; /* 200% */
+      border-radius: 0.8rem 0rem 0.8rem 0rem;
+    }
+  }
+  &-picture {
+    width: 32.6rem;
+    height: 20rem;
+    border-radius: 1.2rem 1.2rem 0rem 0rem;
+    overflow: hidden;
+    @include sp {
+      width: 26.8rem;
+      height: 16.4rem;
+      border-radius: 0.8rem 0.8rem 0rem 0rem;
+    }
+    img {
+      transition: transform 1.5s $ease-custom2;
+    }
+  }
+  &-text {
+    padding: 1.6rem 2.3rem 2.3rem 2.3rem;
+    @include sp {
+      padding: 1.1rem 1.5rem 1.6rem;
+    }
+  }
+  &-category {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 2.6rem;
+    padding: 0 1.2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    @include sp {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      height: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+  &-copy {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.4rem; /* 160% */
+    letter-spacing: 0.015rem;
+    border-bottom: 1px solid #e6eae9;
+    padding-bottom: 1.1rem;
+    margin-bottom: 0.8rem;
+    @include sp {
+      font-size: 1.4rem;
+      line-height: 2rem; /* 142.857% */
+      letter-spacing: 0.014rem;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0.9rem;
+    }
+  }
+  &-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2.4rem; /* 171.429% */
+    letter-spacing: 0.014rem;
+    @include sp {
+      font-size: 1.4rem;
+      letter-spacing: 0.014rem;
+      line-height: 2.2rem;
+    }
+  }
+  &-position {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3rem; /* 118.182% */
+    letter-spacing: 0.011rem;
+    color: #879390;
+    margin-top: 0.5rem;
+    @include sp {
+      font-size: 1rem;
+      letter-spacing: 0.01rem;
+    }
+  }
+}

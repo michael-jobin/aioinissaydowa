@@ -1,0 +1,160 @@
+.fixedLink {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  transform: translate3d(0, calc(100% + 2rem), 0);
+  transition: transform 0.4s ease-in-out;
+  @include sp {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  a {
+    width: 42rem;
+    border-radius: 1.2rem;
+    background: #fff;
+    display: flex;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    filter: drop-shadow(0px 0px 30px rgba(0, 108, 96, 0.2));
+    @include pc {
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+        .fixedLink__text-arrow {
+          transform: translateX(0.3rem);
+        }
+      }
+    }
+    @include sp {
+      width: 34.3rem;
+    }
+  }
+  &__picture {
+    width: 12rem;
+    height: 12rem;
+    overflow: hidden;
+    @include sp {
+      width: 9.2rem;
+      height: 9.2rem;
+    }
+    img {
+      transition: transform 1.5s $ease-custom2;
+    }
+  }
+  &__text {
+    width: calc(100% - 12rem);
+    padding: 1.6rem 0 1rem 2.2rem;
+    position: relative;
+    @include sp {
+      width: calc(100% - 9.2rem);
+      padding: 1.3rem 0 0.4rem 2.5rem;
+    }
+  }
+
+  &__text-index {
+    color: $color1;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    @include sp {
+    }
+  }
+  &__text-copy1 {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.2rem; /* 146.667% */
+    letter-spacing: 0.015rem;
+    display: inline;
+    position: relative;
+
+    @include sp {
+      font-size: 1.2rem;
+      line-height: 1.8rem; /* 150% */
+      margin: 0.3rem 0 0 0;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      color: #006c60;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 600;
+    }
+    &::before {
+      content: '“';
+      top: -0.1rem;
+      left: -1.1rem;
+      @include sp {
+        left: -0.9rem;
+        top: 0;
+      }
+    }
+    &::after {
+      content: '”';
+      right: -1.2rem;
+      bottom: -0.8rem;
+      @include sp {
+        right: -0.9rem;
+        bottom: -0.6rem;
+      }
+    }
+  }
+  &__text-copy2 {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.7rem; /* 170% */
+    letter-spacing: 0.03rem;
+    color: #879390;
+    margin-top: 0.2rem;
+    @include sp {
+      display: none;
+    }
+  }
+  &__text-arrow {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 0.8rem 0rem 1.2rem 0rem;
+    background: #006c60;
+    width: 12.4rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2rem; /* 200% */
+    letter-spacing: 0.01rem;
+    padding-left: 0.2rem;
+    transition: transform 1.5s $ease-custom1;
+    @include sp {
+      width: 3.6rem;
+      height: 2.2rem;
+    }
+    span {
+      @include sp {
+        display: none;
+      }
+    }
+    svg {
+      margin-left: 1rem;
+      width: 2.2rem;
+      fill: white;
+      @include sp {
+        width: 1.9rem;
+        margin: 0;
+      }
+    }
+  }
+}
+.show-fixed-elements {
+  .fixedLink {
+    transform: translate3d(0, 0, 0);
+  }
+}

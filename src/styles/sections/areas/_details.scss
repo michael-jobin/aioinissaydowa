@@ -1,0 +1,277 @@
+.details {
+  width: 105.8rem;
+  margin: auto;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  @include sp {
+    width: 32.7rem;
+  }
+  &__inner {
+    padding: 6.5rem 8rem 7.2rem;
+    @include sp {
+      padding: 3.4rem 2rem 5rem;
+    }
+    &.category1 {
+      background: #e7f4f4;
+    }
+    &.category2 {
+      background: #ecf5fa;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6.4rem;
+    color: #fff;
+    font-size: 2.2rem;
+
+    font-weight: 600;
+    line-height: 5.6rem; /* 254.545% */
+    letter-spacing: 0.022rem;
+    @include sp {
+      font-size: 1.8rem;
+      line-height: 5.6rem; /* 311.111% */
+      letter-spacing: 0.018rem;
+      height: 4.8rem;
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    @include sp {
+      flex-direction: column;
+    }
+  }
+  &__text {
+    width: 42.5rem;
+    @include sp {
+      width: 100%;
+      margin-bottom: 3.4rem;
+    }
+  }
+  &__text-item:not(:last-child) {
+    margin-bottom: 4.8rem;
+    @include sp {
+      margin-bottom: 2.8rem;
+    }
+  }
+  &__text-title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.6rem; /* 130% */
+    border-bottom: 0.2rem solid #d1dfdf;
+    padding-bottom: 1.6rem;
+    margin-bottom: 2.4rem;
+    position: relative;
+    @include sp {
+      font-size: 1.8rem;
+      line-height: 2.4rem; /* 133.333% */
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    span {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -0.2rem;
+      width: 4rem;
+      height: 0.2rem;
+    }
+  }
+  &__text-subtitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.8rem; /* 175% */
+    margin-bottom: 0.5rem;
+    @include sp {
+      font-size: 1.4rem;
+      line-height: 2.4rem; /* 171.429% */
+      margin-bottom: 0.6rem;
+    }
+  }
+  &__text-paragraph {
+    text-align: justify;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.8rem; /* 200% */
+    @include sp {
+      font-size: 1.4rem;
+      line-height: 2.8rem; /* 200% */
+    }
+  }
+  &__text-whiteList {
+    padding: 2rem 2.4rem;
+    background-color: white;
+    margin: 2rem 0 0 0;
+    li {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 2.4rem; /* 171.429% */
+    }
+  }
+  &__text-list {
+    li {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 2.8rem; /* 200% */
+      @include sp {
+        line-height: 2.4rem; /* 171.429% */
+      }
+    }
+  }
+  &__text-small {
+    margin-top: 1rem;
+    @include sp {
+      margin-top: 1.4rem;
+    }
+    small {
+      font-size: 1.2rem;
+
+      font-weight: 400;
+      line-height: 2rem; /* 166.667% */
+    }
+  }
+  &__picture {
+    width: 40rem;
+    margin-top: 1rem;
+    @include sp {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  &__numbers {
+    border-radius: 0.8rem;
+    background: #fff;
+    margin-top: 5.6rem;
+    display: flex;
+    height: 18.7rem;
+    position: relative;
+    @include sp {
+      margin-top: 4.2rem;
+      height: auto;
+      flex-direction: column;
+    }
+  }
+  &__numbers-title {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.18em;
+    border-radius: 0.8rem 0 0 0.8rem;
+    @include sp {
+      text-orientation: mixed;
+      writing-mode: horizontal-tb;
+      width: 100%;
+      border-radius: 0.8rem 0.8rem 0rem 0rem;
+      font-size: 1.4rem;
+      letter-spacing: 0.014rem;
+      padding: 0.3rem 0 0.8rem;
+    }
+  }
+  &__numbers-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include sp {
+      flex-direction: column;
+    }
+  }
+  &__numbers-item {
+    text-align: center;
+    padding: 0 8rem;
+    position: relative;
+    @include sp {
+      padding: 1.6rem 0 1.8rem;
+    }
+    &:first-child::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      height: 9rem;
+      width: 1px;
+      background-color: #e6eae9;
+      @include sp {
+        width: 24.1rem;
+        height: 1px;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  &__numbers-item-people {
+    font-family: $sans;
+    font-size: 8rem;
+    font-weight: 500;
+    line-height: 6.4rem; /* 80% */
+    letter-spacing: -0.32rem;
+    @include sp {
+      font-size: 4.8rem;
+      letter-spacing: -0.192rem;
+      line-height: 1.1;
+    }
+    span {
+      color: $text;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.5rem; /* 75% */
+      letter-spacing: normal;
+      @include sp {
+        font-size: 1.6rem;
+        line-height: 1.5rem; /* 93.75% */
+      }
+    }
+  }
+  &__numbers-item-subject {
+    font-size: 1.5rem;
+
+    font-weight: 600;
+    line-height: 1.5rem; /* 100% */
+    margin-top: 1.2rem;
+    @include sp {
+      font-size: 1.4rem;
+      margin-top: 0;
+    }
+    small {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      margin-top: 0.4rem;
+      @include sp {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  &__numbers-small {
+    position: absolute;
+    top: calc(100% + 0.3rem);
+    left: 0;
+    width: 100%;
+    text-align: right;
+    font-size: 1rem;
+
+    font-weight: 400;
+    line-height: 2rem; /* 200% */
+    padding-right: 0.1rem;
+    @include sp {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      text-align: left;
+      top: calc(100% + 0.8rem);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+---
+import Picture from './Picture.astro'
+const homeUrl = import.meta.env.BASE_URL
+const interview = Astro.props.interview
+---
+
+<article class="interviews__card-item">
+  <a class="interviews__card-card" href={`${homeUrl}interview/${interview.slug}/`}>
+    <p class="interviews__card-index">Interview {interview.index}</p>
+    <Picture
+      cl="interviews__card-picture cover"
+      src={`${homeUrl}assets/images/interview/${interview.slug}/thumbnail_img01`}
+      alt={interview.name}
+      width="652"
+      height="400"
+      format=".png"
+    />
+    <div class="interviews__card-text">
+      <p
+        class={`interviews__card-category category-bg ${interview.category === '人財の強化' ? 'category1' : 'category2'}`}
+      >
+        {interview.area}
+      </p>
+      <p class="interviews__card-copy">{interview.copy1}</p>
+      <p class="interviews__card-name">{interview.name}</p>
+      <p class="interviews__card-position pre-line">{interview.position}</p>
+    </div>
+  </a>
+</article>

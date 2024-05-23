@@ -1,0 +1,24 @@
+---
+import profileJson from '../../data/companyProfile.json'
+import type { CompanyProfile } from '../../types/CompanyProfile'
+const profile: CompanyProfile = profileJson
+---
+
+<section class="profile inview fadeIn">
+  <h2 class="basic-title-en">{profile.titleEn}</h2>
+  <p class="basic-title-ja">{profile.titleJa}</p>
+  <div class="profile__container">
+    {
+      profile.items.map((item) => (
+        <div class="profile__item">
+          <h3 class="profile__item-title">{item.title}</h3>
+          <p class="profile__item-number">
+            {item.number}
+            <span>{item.unit}</span>
+          </p>
+          <p class="profile__item-text">{item.text}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

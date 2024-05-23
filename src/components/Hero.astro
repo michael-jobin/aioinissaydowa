@@ -1,0 +1,53 @@
+---
+import Picture from './Picture.astro'
+const homeUrl = import.meta.env.BASE_URL
+const { copy, title, slug, index, color, isInterview, area, name, position, titleSp } = Astro.props
+---
+
+<section class="hero inview fadeIn">
+  <Picture
+    cl="hero__picture cover"
+    src={`${homeUrl}/assets/images/${isInterview ? 'interview/' : ''}${slug}/hero_img01`}
+    alt={title}
+    width="2276"
+    height="1000"
+    format=".png"
+  />
+  <div class="hero__text">
+    <p class="hero__text-sup">{copy}</p>
+    <h1 class="hero__text-title">
+      {
+        title.split('\n').map((line: string, i: number) => (
+          <span class={`hero__text-line category-bg ${color} ${titleSp ? 'sp-hide' : ''}`}>
+            {i === 0 && index && (
+              <span class={`category-color hero__text-index ${color}`}>{index}</span>
+            )}
+            {line}
+          </span>
+        ))
+      }
+      {
+        // sp is the same as above it is just to change the line break
+        titleSp?.split('\n').map((line: string, i: number) => (
+          <span class={`hero__text-line category-bg ${color} ${titleSp ? 'pc-hide' : ''}`}>
+            {i === 0 && index && (
+              <span class={`category-color hero__text-index ${color}`}>{index}</span>
+            )}
+            {line}
+          </span>
+        ))
+      }
+    </h1>
+  </div>
+  {
+    isInterview && (
+      <div class="hero__box">
+        <div class="hero__box-content">
+          <p class={`hero__box-category category-bg ${color}`}>{area}</p>
+          <h2 class="hero__box-name">{name}</h2>
+          <p class="hero__box-position pre-line">{position}</p>
+        </div>
+      </div>
+    )
+  }
+</section>

@@ -1,0 +1,25 @@
+---
+import Navigation from './Navigation.astro'
+---
+
+<button class="menu__button" aria-label="menu">
+  <span class="menu__button-line"></span>
+  <span class="menu__button-line"></span>
+</button>
+
+<aside class="menu">
+  <div class="menu__inner">
+    <nav class="menu__nav">
+      <Navigation />
+    </nav>
+  </div>
+</aside>
+
+<script>
+  const menuButton = document.querySelector('.menu__button')
+  if (menuButton) {
+    menuButton.addEventListener('click', () => {
+      document.body.classList.toggle('menu-is-open')
+    })
+  }
+</script>

@@ -1,0 +1,156 @@
+---
+import ArrowRight from '../../components/icons/ArrowRight.astro'
+import InterviewsList from '../../data/interviewsList.json'
+import InterviewCard from '../../components/InterviewCard.astro'
+const homeUrl = import.meta.env.BASE_URL
+---
+
+<section class="interviews">
+  <div class="interviews__container inview fadeIn">
+    <div class="interviews__text-area">
+      <h2 class="basic-title-en">Interview</h2>
+      <p class="basic-title-ja">社員紹介</p>
+      <p class="interviews__text-paragraph">
+        人的資本経営を目指し、体現する姿とは？<br />
+        ミッションを体現する社員達の声を各取り組みに分けてインタビューしています。
+      </p>
+      <p class="basic-button pc"><a href={homeUrl + 'interview/'}>詳しく見る<ArrowRight /></a></p>
+    </div>
+    <div class="interviews__slider-area">
+      <div class="interviews__slider">
+        <div class="interviews__slider-wrapper">
+          {InterviewsList.map((interview) => <InterviewCard interview={interview} />)}
+          <article class="interviews__card-item">
+            <span class="interviews__card-card comingsoon">
+              <img
+                src={homeUrl + 'assets/images/home/interviews_comingsoon.png'}
+                alt="coming soon"
+                width="314"
+                height="182"
+              />
+            </span>
+          </article>
+        </div>
+      </div>
+      <div class="interviews__slider-controls">
+        <div class="interviews__slider-progress">
+          <div class="interviews__slider-progress-bar">
+            <div>&nbsp;</div>
+          </div>
+        </div>
+        <div class="interviews__slider-buttons">
+          <button aria-label="next" class="interviews__slider-prev"><ArrowRight /></button>
+          <button aria-label="prev" class="interviews__slider-next"><ArrowRight /></button>
+        </div>
+      </div>
+    </div>
+    <p class="basic-button sp center">
+      <a href={homeUrl + 'interview/'}>詳しく見る<ArrowRight /></a>
+    </p>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap'
+
+  class Slider {
+    private interviewsSlider: HTMLElement | null
+    private wrapper: HTMLElement | null
+    private items: NodeListOf<HTMLElement>
+    private progress: HTMLElement | null
+    private prevButton: HTMLElement | null
+    private nextButton: HTMLElement | null
+    private itemWidth: number
+    private duration: number
+    private ease: string
+    private current: number
+    private max: number
+    private isAnimating: boolean
+
+    constructor(selector: string) {
+      this.interviewsSlider = document.querySelector(selector)
+      this.wrapper = null
+      this.items = document.querySelectorAll('.interviews__card-item') as NodeListOf<HTMLElement>
+      this.progress = null
+      this.prevButton = null
+      this.nextButton = null
+      this.itemWidth = 0
+      this.duration = 0.8
+      this.ease = 'cubic.inOut'
+      this.current = 0
+      this.max = 0
+      this.isAnimating = false
+
+      if (this.interviewsSlider && window.innerWidth > 768) {
+        this.init()
+      }
+    }
+
+    private init() {
+      this.wrapper = document.querySelector('.interviews__slider-wrapper') as HTMLElement
+      this.items = document.querySelectorAll('.interviews__card-item') as NodeListOf<HTMLElement>
+      this.progress = document.querySelector('.interviews__slider-progress-bar div') as HTMLElement
+      this.prevButton = document.querySelector('.interviews__slider-prev') as HTMLElement
+      this.nextButton = document.querySelector('.interviews__slider-next') as HTMLElement
+      this.itemWidth = this.items[0].offsetWidth
+      this.max = this.items.length - 1
+
+      this.updateElements()
+      this.nextButton.addEventListener('click', this.goNext)
+      this.prevButton.addEventListener('click', this.goPrev)
+    }
+
+    public cleanUp() {
+      if (this.nextButton && this.prevButton) {
+        this.nextButton.removeEventListener('click', this.goNext)
+        this.prevButton.removeEventListener('click', this.goPrev)
+      }
+    }
+
+    private updateElements = () => {
+      this.items.forEach((item, index) => {
+        item.classList.toggle('hidden', index < this.current)
+      })
+
+      if (this.prevButton && this.nextButton) {
+        this.prevButton.classList.toggle('disabled', this.current === 0)
+        this.nextButton.classList.toggle('disabled', this.current === this.max)
+      }
+
+      if (this.progress) {
+        const progressWidth = (this.current / this.max) * 100
+        gsap.to(this.progress, {
+          scaleX: `${progressWidth}%`,
+          duration: this.duration,
+          ease: this.ease,
+        })
+      }
+    }
+
+    private slide = (direction: number) => {
+      if (
+        this.isAnimating ||
+        (direction === 1 && this.current === this.max) ||
+        (direction === -1 && this.current === 0)
+      )
+        return
+      this.isAnimating = true
+      this.current += direction
+      this.updateElements()
+      if (this.wrapper) {
+        gsap.to(this.wrapper, {
+          x: -this.current * this.itemWidth,
+          duration: this.duration,
+          ease: this.ease,
+          onComplete: () => {
+            this.isAnimating = false
+          },
+        })
+      }
+    }
+
+    private goNext = () => this.slide(1)
+    private goPrev = () => this.slide(-1)
+  }
+  new Slider('.interviews__slider')
+</script>

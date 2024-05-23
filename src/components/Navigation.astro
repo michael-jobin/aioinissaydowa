@@ -1,0 +1,46 @@
+---
+import type { Area } from '../types/Area'
+import areasList from '../data/areasList.json'
+import ExternalLink from './icons/ExternalLink.astro'
+const homeUrl = import.meta.env.BASE_URL
+---
+
+<ul class="navigation-list hover-listItem-underline">
+  <li class="navigation-item">
+    <a
+      href="https://www.aioinissaydowa.co.jp/corporate/about/philosophy.html"
+      class="navigation-link"
+    >
+      ミッションビジョンバリュー
+      <ExternalLink />
+    </a>
+  </li>
+  <li class="navigation-item">
+    <a
+      href="https://www.aioinissaydowa.co.jp/corporate/about/csvdx_statement.html"
+      class="navigation-link"
+    >
+      CSV×DX
+      <ExternalLink />
+    </a>
+  </li>
+  <li class="navigation-item has-subMenu">
+    <span class="navigation-link">6つの領域</span>
+    <ul class="navigation-subMenu">
+      {
+        areasList
+          .filter((area: Area) => area.active)
+          .map((area: Area) => (
+            <li class="navigation-subItem">
+              <a href={`${homeUrl}${area.slug}`} class="navigation-subLink">
+                {area.title}
+              </a>
+            </li>
+          ))
+      }
+    </ul>
+  </li>
+  <li class="navigation-item">
+    <a href={`${homeUrl}interview/`} class="navigation-link">社員紹介</a>
+  </li>
+</ul>

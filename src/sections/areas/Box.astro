@@ -1,0 +1,9 @@
+---
+const { title, text } = Astro.props.box
+const color = Astro.props.color
+---
+
+<div class="boxList__item">
+  <h2 class={`boxList__item-title category-bg ${color}`}>{title}</h2>
+  <p class="boxList__item-text">{text}</p>
+</div>

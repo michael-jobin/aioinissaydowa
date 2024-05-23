@@ -1,0 +1,39 @@
+.figure {
+  padding: 9rem 0 0rem;
+  @include sp {
+    padding: 5.6rem 0 2rem;
+  }
+  &__container {
+    width: 105.6rem;
+    margin: auto;
+    @include sp {
+      width: 100%;
+      padding: 0 0 0 2rem;
+    }
+  }
+  &__title {
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 3.8rem; /* 158.333% */
+    margin-bottom: 2rem;
+    @include sp {
+      font-size: 2rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+  }
+  // &__text {
+  //   font-size: 1.6rem;
+  //   font-style: normal;
+  //   font-weight: 400;
+  //   line-height: 3.8rem; /* 237.5% */
+  //   margin-bottom: 2.4rem;
+  // }
+  &__picture {
+    @include sp {
+      width: 71.7rem;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+@import 'abstracts/_variables';
+
+//base
+@import 'base/_reset';
+@import 'base/_base';
+
+//components
+@import 'components/_basic';
+@import 'components/_menu';
+@import 'components/_header';
+@import 'components/_hero';
+@import 'components/_footer';
+@import 'components/_fixedLink';
+@import 'components/_interviewCard';
+@import 'components/_opening';
+
+//pages sections
+@import 'sections/home/_mv';
+@import 'sections/home/_mission';
+@import 'sections/home/_areas';
+@import 'sections/home/_interviews';
+@import 'sections/home/_profile';
+
+@import 'sections/areas/_introduction';
+@import 'sections/areas/_details';
+@import 'sections/areas/_figure';
+@import 'sections/areas/_boxList';
+
+@import 'sections/interview/interviewList';
+@import 'sections/interview/about';
+@import 'sections/interview/talk';
+@import 'sections/interview/related';

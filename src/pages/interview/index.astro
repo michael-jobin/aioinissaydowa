@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Hero from '../../components/Hero.astro'
+import InterviewsList from '../../data/interviewsList.json'
+import InterviewCard from '../../components/InterviewCard.astro'
+---
+
+<Layout
+  title="社員紹介｜人的資本経営｜あいおいニッセイ同和損害保険株式会社"
+  description="あいおいニッセイ同和損保の人的資本経営に関するサイトです。当社の目指す人的資本経営を体現する社員達を紹介します。"
+>
+  <Hero copy="人的資本経営を目指し、体現する" title="社員紹介" slug="interview" color="color1" />
+  <section class="InterviewList inview fadeIn">
+    <div class="InterviewList__container">
+      {InterviewsList.map((interview) => <InterviewCard interview={interview} />)}
+    </div>
+  </section>
+</Layout>

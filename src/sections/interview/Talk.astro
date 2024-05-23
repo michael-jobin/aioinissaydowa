@@ -1,0 +1,43 @@
+---
+import type { TalkDetails } from '../../types/Interview'
+import Picture from '../../components/Picture.astro'
+const homeUrl = import.meta.env.BASE_URL
+const interview = Astro.props.interview
+---
+
+<section class="talk">
+  <div class="talk__container">
+    {
+      interview.talk.map((item: TalkDetails, index: number) => {
+        return (
+          <div class="talk__item inview fadeIn">
+            <div class="talk__item__text">
+              <p class="talk__item__text-index">QUESTION 0{index + 1}</p>
+              <p class="talk__item__text-question">{item.question}</p>
+              {item.answerParagraphs.map((paragraph: string) => {
+                return <p class="talk__item__text-paragraph">{paragraph}</p>
+              })}
+              {item.smalls?.map((small: string) => {
+                return (
+                  <p class="talk__item__text-small">
+                    <small>{small}</small>
+                  </p>
+                )
+              })}
+            </div>
+            <div class="talk__item__image">
+              <Picture
+                cl="cover"
+                src={`${homeUrl}assets/images/interview/${interview.slug}/talk_img0${index + 1}`}
+                alt={interview.name}
+                width="1026"
+                height="800"
+                format=".png"
+              />
+            </div>
+          </div>
+        )
+      })
+    }
+  </div>
+</section>
