@@ -7,24 +7,24 @@ Stucture:
 ```
 public
   └── assets
-      └── images    //git ignored
+      └── images                        // images git ignored
 src
-  └── components
+  └── components                        // small components
       └── icons
           ├── Header.astro
           ...
-  └── data
+  └── data                              // site data text content
       ├── areasList.json
       ├── companyProfile.json
       └── interviewsList.json
   └── layouts
-  └── pages
+  └── pages                             // pages
       ├── dei
       ├── humanresource-development
       ├── humanresource-management
       ├── interview
       └── index.astro
-  └── sections
+  └── sections                          // pages sections
       ├── areas
       ├── home
       └── interview
