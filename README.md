@@ -2,9 +2,12 @@ Testing various site generation features using Astro. Creating pages that showca
 
 This project is licensed privately. Unauthorized use of this code,images and texts is prohibited.
 
+test server: https://data.ondo-inc.jp/humancapital/
+
 Stucture:
 
 ```
+
 public
   └── assets
       └── images                        // images git ignored
@@ -17,7 +20,7 @@ src
       ├── areasList.json
       ├── companyProfile.json
       └── interviewsList.json
-  └── layouts
+  └── layouts                           // base template for every pages
   └── pages                             // pages
       ├── dei
       ├── humanresource-development
@@ -31,4 +34,17 @@ src
   └── styles
   └── types
   └── utils
+
+
+
+
+page exemple:
+<layout>
+    <page>
+        <section>
+            <component />
+        </section>
+    </page>
+</layout>
+
 ```
