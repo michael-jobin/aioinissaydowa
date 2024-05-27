@@ -9,7 +9,7 @@
   &__inner {
     padding: 6.5rem 8rem 7.2rem;
     @include sp {
-      padding: 3.4rem 2rem 5rem;
+      padding: 3.4rem 2rem 4rem;
     }
     &.category1 {
       background: #e7f4f4;
@@ -268,20 +268,15 @@
     }
   }
   &__numbers-small {
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    left: 0;
     width: 100%;
-    text-align: right;
     font-size: 1rem;
     font-weight: 400;
-    line-height: 2rem; /* 200% */
-    padding-right: 0.1rem;
-    line-height: 1.5;
+    margin: 0.5rem 0 0;
+    line-height: 1.6rem; /* 160% */
     @include sp {
-      font-size: 0.9rem;
-      text-align: left;
-      top: calc(100% + 0.8rem);
+      font-size: 1rem;
+      line-height: 1.4rem; /* 140% */
+      margin: 1.2rem 0 -0.3rem;
     }
   }
 }
