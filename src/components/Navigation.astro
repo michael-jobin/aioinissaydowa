@@ -32,7 +32,7 @@ const homeUrl = import.meta.env.BASE_URL
           .filter((area: Area) => area.active)
           .map((area: Area) => (
             <li class="navigation-subItem">
-              <a href={`${homeUrl}${area.slug}`} class="navigation-subLink">
+              <a href={`${homeUrl}${area.slug}/`} class="navigation-subLink">
                 {area.title}
               </a>
             </li>
