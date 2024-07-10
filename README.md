@@ -2,28 +2,11 @@
 
 - **Compiler:** [Astro](https://astro.build/)
 - **Compiler Configuration:** `/astro.config.mjs`
-- **Project Root:** `/`
-- **Test Server URL:** https://data.ondo-inc.jp/humancapital/
-  - **ID:** admin
-  - **Password:** i3hmls627pgfy
+- **Project Root:** `/humancapital/`
 - **Production URL:** https://www.aioinissaydowa-saiyou.com/humancapital/
 - **CMS:** []
-- **Design:** 井上さん
-- **Client:** [works japan + あいおいニッセイ同和損保]
+- **Design:** Ondo.inc
 - **Date:** [5/2024]
-- **Delivery:** [データー納品]
-
-## Memo
-
-```
-各URLの語尾には必ず『スラッシュ』を入れて欲しいとのことです（誤作動回避）
-==============
-これを
-https://◯◯◯.com/◯◯◯
-↓↓↓
-このように語尾に「/」つける
-https://◯◯◯.com/◯◯◯/
-```
 
 ## Stucture:
 
@@ -31,7 +14,7 @@ https://◯◯◯.com/◯◯◯/
 
 public
   └── assets
-      └── images                        // images (git ignored)
+      └── images                        // images
 src
   └── components                        // small components
       └── icons
@@ -57,3 +40,7 @@ src
   └── utils
 
 ```
+
+## Copyright Notice
+
+The design and content of this site are protected by copyright. Unauthorized use, reproduction, or distribution of any part of this website, including but not limited to text, images, graphics, and code, is strictly prohibited without prior written permission from the site owner. All rights reserved.
