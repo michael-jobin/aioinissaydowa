@@ -31,7 +31,6 @@
         height: 11rem;
         border-radius: 11rem;
         background: linear-gradient(180deg, #00CAD6 0%, #0076B8 100%);
-        backdrop-filter: blur(10px);
         transition: all 0.2s ease;
         @include sp {
             max-width: 5rem;
@@ -46,9 +45,7 @@
         left: 55%; //X軸
         width: 3rem;
         height: 3.3462rem;
-        margin: auto;
         background: url(/public/assets/images/message/video_icon.svg) no-repeat 100%;
-        box-sizing: border-box;
         @include sp {
             width: 1.5rem;
             height: 1.6731rem;
@@ -56,7 +53,6 @@
     }
     &__btn:hover {
         transform: translate(-50%,-50%) scale(1.15);
-        transition: all 0.2s linear;
     }
 
     //----- モーダル -----//

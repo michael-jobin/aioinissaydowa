@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 import Hero from "../../components/Hero.astro"
+import Picture from "../../components/Picture.astro"
 const homeUrl = import.meta.env.BASE_URL
 ---
 
@@ -13,21 +14,26 @@ const homeUrl = import.meta.env.BASE_URL
     color="color1"
   />
 
-  <section class="video">
+  <section class="video inview fadeIn">
     <div class="video__container">
       <p class="video__textArea">動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。</p>
       <div class="video__play">
         <button class="video__btn" type="button" aria-label="play"></button>
-        <picture>
-          <img src={`${homeUrl}assets/images/message/video_img01.png`} alt="社長メッセージ動画" width="100%" height="100%">
-        </picture>
+        <Picture
+          src={`${homeUrl}assets/images/message/video_img01`}
+          alt="インタビュー動画"
+          width="944"
+          height="531"
+          format=".png"
+          loading="lazy"
+        />
       </div>
     </div>
     <div class="video__modal">
       <div class="modal__overlay">
         <i class="modal__closeBtn"></i>
       </div>
-      <iframe src="https://player.vimeo.com/video/414432835?h=e65d1b4443" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://player.vimeo.com/video/258181502?h=bd0ca6e02e&autoplay=1&title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
     </div>
   </section>
 
