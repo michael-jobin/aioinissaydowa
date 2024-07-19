@@ -34,41 +34,41 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
         <div class="details__text">
           <div class="details__text-item">
             <h3 class="details__text-title">
-              ①多様な価値観を受け入れる組織風土を醸成し、全社員がいきいきと働ける職場へ
+              ①多様な働き方を支える制度の導入・活用推進
               <span class={`category-bg ${color}`}></span>
             </h3>
             <ul class="details__text-list">
               <li>
-                ●一人ひとりが、アンコンシャスバイアスや、DE&Iの意義・重要性を“自分ごと”として理解し、思いっきりチャレンジできる風土醸成に取り組みます。
+                ●仕事と家庭を両立し、やりがいを持って前向きに仕事に取り組めるよう、柔軟な働き方を実現する制度の活用を推進します。
               </li>
             </ul>
             <ul class="details__text-whiteList">
-              <li>- DE&I推進について、職場で意見を交わし、 アクション&チェンジができる場の設定</li>
-              <li>- 全国の社員同士がつながる交流の場づくり</li>
-              <li>- レインボー月間などを活用したLGBTQの理解浸透</li>
+              <li>- 在宅勤務制度・短時間勤務・シフト勤務制度等の活用推進</li>
+              <li>- 男性育児休業の取得推進</li>
+              <li>- カジュアルスタイルの導入</li>
             </ul>
           </div>
           <div class="details__text-item">
             <h3 class="details__text-title">
-              ②意思決定層の多様化・多様な社員の活躍で、価値観の融合を、組織力につなげる
+              ②"明るく""いきいき""働きがい"のある職場づくり
               <span class={`category-bg ${color}`}></span>
             </h3>
             <ul class="details__text-list">
               <li>
-                ●社員一人ひとりが持つ能力を最大限発揮するため、それぞれの強みや特性を認め、違いを活かすことで
-                組織を活性化します。
+                ●全社で総労働時間の削減に取り組み、社外の人との交流や、ボランティアへの参加等による社会・地域課題や様々な考えに触れる機会、家族と過ごす時間、自己研鑽に取り組む時間等の“自分時間”を創出し、ワークライフマネジメントを推進します。
+              </li>
+              <ul class="details__text-whiteList">
+                <li>
+                  - 全社での業務削減の取組み、生産性向上に向けたデジタル化の推進や、旧来の商慣習・業務の仕方の見直し等を進め、長時間労働からの脱却を目指します。
+                </li>
+                <li>
+                  - 「年次有給休暇の計画的付与制度」を活用し、計画対象日数以上の有給休暇を全社員が100%取得することを目指し、ライン長が率先して休暇を取得するなど、休みやすい環境づくりを推進します。
+                </li>
+              </ul>
+              <li>
+                ●副業・兼業を可能とし、社員のスキル向上・キャリアプラン設計の支援や、柔軟でイノベーティブな発想を促します。
               </li>
             </ul>
-            <ul class="details__text-whiteList">
-              <li>- 女性社員がマネージャーを目指すための後押し支援（各種研修、メンター制度、交流会ほか）</li>
-              <li>- 障がい者雇用社員の活躍領域の拡大、障がい者雇用社員の得意を活かして活躍できる環境の整備</li>
-            </ul>
-            <p class="details__text-paragraph supplement-link">
-              より詳しく知りたい方は、<a
-                href="https://www.aioinissaydowa.co.jp/sustainability/diversity/"
-                >当社のダイバーシティ推進のページ</a
-              >をご覧ください。
-            </p>
           </div>
         </div>
         <Picture
@@ -80,23 +80,28 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
           format=".png"
         />
       </div>
-      <div class="details__numbers">
+      <div class="details__numbers custom-layout">
         <h3 class={`details__numbers-title category-bg ${color}`}>目指す姿</h3>
         <div class="details__numbers-list">
           <div class="details__numbers-item">
-            <p class={`details__numbers-item-people category-color ${color}`}>
-              24<span>%</span>
-            </p>
+            <div class="details__numbers-item-row">
+              <p class={`details__numbers-item-people category-color ${color}`}>
+                <em>取得率</em>100<span>%</span>
+              </p>
+              <p class={`details__numbers-item-people category-color ${color}`}>
+                <em>取得日数</em>4<span>週間</span>
+              </p>
+            </div>
             <p class="details__numbers-item-subject">
-              女性管理職比率<small>（2024年4月時点：20.0％）</small>
+              男性育休<small>（2023年度：取得率97.3%・取得日数14.4日）</small>
             </p>
           </div>
           <div class="details__numbers-item">
             <p class={`details__numbers-item-people category-color ${color}`}>
-              2.7<span>%</span>
+              20<span>時間以内<small>(月平均)</small></span>
             </p>
             <p class="details__numbers-item-subject">
-              障がい者雇用率<small>（2024年4月時点：2.58％）</small>
+              所定外労働時間<small>（全社員平均）</small>
             </p>
           </div>
         </div>

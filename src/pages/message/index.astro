@@ -18,7 +18,9 @@ const homeUrl = import.meta.env.BASE_URL
     <div class="video__container">
       <p class="video__textArea">動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。</p>
       <div class="video__play">
-        <button class="video__btn" type="button" aria-label="play"></button>
+        <button class="video__btn" type="button" aria-label="play">
+          <img src={`${homeUrl}assets/images/message/video_icon.svg`} alt="矢印" width="30" height="33">
+        </button>
         <Picture
           src={`${homeUrl}assets/images/message/video_img01`}
           alt="インタビュー動画"

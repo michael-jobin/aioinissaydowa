@@ -114,8 +114,10 @@
   &__text-whiteList {
     padding: 2rem 2.4rem;
     background-color: white;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0;
     li {
+      padding-left: 1rem;
+      text-indent: -1rem;
       font-size: 1.4rem;
       font-weight: 400;
       line-height: 2.4rem; /* 171.429% */
@@ -246,7 +248,6 @@
   }
   &__numbers-item-subject {
     font-size: 1.5rem;
-
     font-weight: 600;
     line-height: 1.5rem; /* 100% */
     margin-top: 1.2rem;
@@ -277,6 +278,74 @@
       font-size: 1rem;
       line-height: 1.4rem; /* 140% */
       margin: 1.2rem 0 -0.3rem;
+    }
+  }
+}
+
+// このページの独自レイアウト
+.custom-layout {
+  .details {
+    &__numbers-item-people {
+      display: flex;
+      em {
+        margin-right: 0.3em;
+        writing-mode: vertical-rl;
+        color: $text;
+        font-size: 1.5rem;
+        letter-spacing: 0;
+        line-height: 1;
+        @include sp {
+          font-size: 1rem;
+        }
+      }
+      span {
+        margin-left: 0.2em;
+        line-height: 1.2;
+        align-self: flex-end;
+        // @include sp {
+        //   margin-bottom: 0.8rem;
+        // }
+      }
+      small {
+        display: flex;
+        font-size: 1.5rem;
+        @include sp {
+          padding-bottom: 1rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    &__numbers-item-row {
+      display: flex;
+      p {
+        display: flex;
+        span {
+          align-self: flex-end;
+          @include sp {
+            line-height: 2;
+          }
+        }
+      }
+      p:last-child {
+       margin-left: 2rem;
+       span {
+        white-space: nowrap;
+       }
+      }
+    }
+  }
+  .item-textOnly {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    @include sp {
+      margin: 1.7rem 0 1rem;
+      font-size: 2.4rem;
+    }
+  }
+  .item-textSmall {
+    @include sp {
+      margin-bottom: 0.8rem;
     }
   }
 }

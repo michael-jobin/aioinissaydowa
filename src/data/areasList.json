@@ -6,7 +6,7 @@
 				"slug": "humanresource-development",
 				"linkedInterviewSlug": "humanresource-development1",
 				"title": "人財育成",
-				"copy1": "自律した学びの機会を創出し、\n社員の“チャレンジ”を後押しします。",
+				"copy1": "自律した学びの機会を創出し、社員の“チャレンジ”を後押しします。",
 				"copy2": "「自律的に行動し、変革にチャレンジし、新たな価値を創造する人財」を輩出しつづけます",
 				"description": "社員の成長を支援し、一人ひとりの成長により会社の価値創造、持続的成長を実現",
 				"boxes": [
@@ -46,14 +46,14 @@
 				"metaDescription": "あいおいニッセイ同和損保の人的資本経営に関するサイトです。当社の人財マネジメントについて詳しく紹介します。"
 			},
 			{
-				"active": false,
+				"active": true,
 				"index": "03",
 				"category": "人財の強化",
 				"slug": "hiring-retention",
 				"linkedInterviewSlug": "humanresource-development1",
 				"title": "採用リテンション",
-				"copy1": "自律した学びの機会を創出し、\n社員の“チャレンジ”を後押しします。",
-				"copy2": "「自律的に行動し、変革にチャレンジし、新たな価値を創造する人財」を輩出しつづけます",
+				"copy1": "「CSV×DXを通じて、お客さま・地域・社会の未来を支えつづける」ことを担う、光る個性に溢れる多種多様な人財を採用します。",
+				"copy2": "新たな価値を創造できる多様な人財の採用とリテンション向上により、持続的成長を実現します。",
 				"description": "採用手法の複線化により地域密着、地域課題を解決する人財の安定的な獲得",
 				"boxes": [
 					{
@@ -89,10 +89,10 @@
 					}
 				],
 				"metaTitle": "DE&I｜6つの領域｜人的資本経営｜あいおいニッセイ同和損害保険株式会社",
-				"metaDescription": "あいおいニッセイ同和損保の人的資本経営に関するサイトです。当社の人財育成について詳しく紹介します。"
+				"metaDescription": "あいおいニッセイ同和損保の人的資本経営に関するサイトです。当社のDE&Iについて詳しく紹介します。"
 			},
 			{
-				"active": false,
+				"active": true,
 				"index": "05",
 				"category": "組織の活性化",
 				"slug": "workstylereform",
@@ -112,17 +112,17 @@
 					}
 				],
 				"metaTitle": "働き方改革｜6つの領域｜人的資本経営｜あいおいニッセイ同和損害保険株式会社",
-				"metaDescription": "あいおいニッセイ同和損保の人的資本経営に関するサイトです。当社のDE&Iについて詳しく紹介します。"
+				"metaDescription": "あいおいニッセイ同和損保の人的資本経営に関するサイトです。当社の働き方改革について詳しく紹介します。"
 			},
 			{
-				"active": false,
+				"active": true,
 				"index": "06",
 				"category": "組織の活性化",
 				"slug": "health-management",
 				"linkedInterviewSlug": "humanresource-development1",
 				"title": "健康経営",
-				"copy1": "社員が“チャレンジ”できる、健康で安全な職場づくりに取り組みます。",
-				"copy2": "心身ともに健康に働くことができる会社とすべての人のWell Beingを目指します。",
+				"copy1": "心身ともに健康で働くことができる会社とすべての人の\nWell-beingを目指します。",
+				"copy2": "社員が“チャレンジ”できる、社員の健康リテラシーの向上といきいきと働ける職場環境を整備します。",
 				"description": "「社員が心身ともに健康で総活躍する会社」を実現",
 				"boxes": [
 					{
