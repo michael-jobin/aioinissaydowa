@@ -52,6 +52,9 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
               CSV×DXエキスパートは全社員のCSV×DX取り組みのフロントランナーを担う人財（選抜型）です。その中でもイノベーション人財は、各部支店における地域社会課題を率先して解決し、「ＣＳＶ×ＤＸ」を実現に導く役割を担います。<br
               />部支店から選抜されたイノベーション人財に対しては、専門的な知識やスキルの習得、挑戦する機会の提供を集中して行うことで、当社の成長戦略を牽引する人財を育成します。
             </p>
+            <p class="details__text-anchorlink">
+              CSV×DXエキスパートの概要はこちら
+            </p>
           </div>
           <div class="details__text-item">
             <h3 class="details__text-title">
@@ -104,7 +107,10 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
 
   <section class="figure">
     <div class="figure__container">
-      <h2 class="figure__title">︎育成全体図</h2>
+      <h2 class="figure__title">︎
+        <img src={`${homeUrl}assets/images/common/sub-title-line.svg`} alt="縦線" width="6" height="22">
+        育成全体図
+      </h2>
       <div class="scroll-container">
         <Picture
           cl="figure__picture"
@@ -115,6 +121,50 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
           format=".png"
           noSp={true}
         />
+      </div>
+    </div>
+  </section>
+
+  <section class="figure">
+    <div class="figure__container figure__inner">
+      <h2 class="figure__title">
+        <img src={`${homeUrl}assets/images/common/sub-title-line.svg`} alt="縦線" width="6" height="22">
+        CSV×DXエキスパート
+      </h2>
+      <p class="figure__text">
+        「CSV×DXエキスパート※」は、育成プログラムを通じて必要な知識・スキルを習得し、全社員のCSV×DX取組みのフロントランナーとなる重要な役割を担います。
+      </p>
+      <p class="figure__text-small">
+        <small>※CSV×DXエキスパートは次の3つの人財の総称です。</small>
+      </p>
+      <div class="figure__box">
+        <div class="figure__box-left">
+          <dl class="figure__box-list">
+            <dt>●デジタルリーダー ＜2,400名＞：</dt>
+            <dd>各職場において、DXによる業務革新を進め、社員のビジネススタイルの変革を担う人財</dd>
+            <dt>●イノベーション人財 ＜500名＞：</dt>
+            <dd>CSV×DX推進に精通し、各部支店において地域社会課題を解決し、CSV×DXを実現に導く役割を担う人財</dd>
+            <dt>●デジタル/IT専門人財 ＜100名＞：</dt>
+            <dd>専門性を駆使してCSV×DX型の商品・サービスや戦略を、本社で企画・開発する役割を担う人財</dd>
+          </dl>
+          <h3 class="figure__box-subtitle">
+            CSV×DXエキスパートの育成で実現したいこと
+            <span class={`category-bg ${color}`}></span>
+          </h3>
+          <p class="figure__text">
+            全社員への一律な研修だけではなく、それぞれの強みを生かし選抜された人財に対して、専門的な知識やスキルの習得の機会を集中して提供していくことで、当社が目指すCSV×DXを実現します。
+          </p>
+        </div>
+        <div class="figure__box-right">
+          <Picture
+            src={`${homeUrl}assets/images/humanresource-development/figure_img02`}
+            alt="図"
+            width="502"
+            height="460"
+            format=".png"
+            noSp={true}
+          />
+        </div>
       </div>
     </div>
   </section>
