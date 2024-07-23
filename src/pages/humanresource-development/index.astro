@@ -28,7 +28,7 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
 
   <Introduction copy1={area.copy1} copy2={area.copy2} />
 
-  <section class="details custom-layout inview fadeIn">
+  <section class="details inview fadeIn">
     <h2 class={`details__title category-bg ${color}`}>主な取り組み</h2>
     <div class={`details__inner ${color}`}>
       <div class="details__container">
@@ -56,7 +56,7 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
             <p class="details__anchorlink">
               <a href="#anchorlink-CSVDX">
                 CSV×DXエキスパートの<br class="sp" />概要はこちら
-                <span><ArrowTop/></span>
+                <span><ArrowTop /></span>
               </a>
             </p>
           </div>
@@ -89,7 +89,7 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
         <h3 class={`details__numbers-title category-bg ${color}`}>目指す姿</h3>
         <div class="details__numbers-list">
           <div class="details__numbers-item">
-            <p class={`details__numbers-item-people category-color ${color}`}>100<span>％</span></p>
+            <p class={`details__numbers-item-people category-color ${color}`}>100<span>%</span></p>
             <p class="details__numbers-item-subject">
               のベーシックスキル修了率を達成<small>（入社から3年目時点）</small>
             </p>
@@ -111,10 +111,7 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
 
   <section class="figure">
     <div class="figure__container">
-      <h2 class="figure__title">︎
-        <img src={`${homeUrl}assets/images/common/sub-title-line.svg`} alt="縦線" width="6" height="22">
-        育成全体図
-      </h2>
+      <h2 class="figure__title">︎育成全体図</h2>
       <div class="scroll-container">
         <Picture
           cl="figure__picture"
@@ -131,10 +128,7 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
 
   <section id="anchorlink-CSVDX" class="figure">
     <div class="figure__container figure__inner">
-      <h2 class="figure__title">
-        <img src={`${homeUrl}assets/images/common/sub-title-line.svg`} alt="縦線" width="6" height="22">
-        CSV×DXエキスパート
-      </h2>
+      <h2 class="figure__title">CSV×DXエキスパート</h2>
       <p class="figure__text">
         「CSV×DXエキスパート※」は、育成プログラムを通じて必要な知識・スキルを習得し、全社員のCSV×DX取組みのフロントランナーとなる重要な役割を担います。
       </p>
@@ -147,9 +141,13 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
             <dt>●デジタルリーダー ＜2,400名＞：</dt>
             <dd>各職場において、DXによる業務革新を進め、社員のビジネススタイルの変革を担う人財</dd>
             <dt>●イノベーション人財 ＜500名＞：</dt>
-            <dd>CSV×DX推進に精通し、各部支店において地域社会課題を解決し、CSV×DXを実現に導く役割を担う人財</dd>
+            <dd>
+              CSV×DX推進に精通し、各部支店において地域社会課題を解決し、CSV×DXを実現に導く役割を担う人財
+            </dd>
             <dt>●デジタル/IT専門人財 ＜100名＞：</dt>
-            <dd>専門性を駆使してCSV×DX型の商品・サービスや戦略を、本社で企画・開発する役割を担う人財</dd>
+            <dd>
+              専門性を駆使してCSV×DX型の商品・サービスや戦略を、本社で企画・開発する役割を担う人財
+            </dd>
           </dl>
           <h3 class="figure__box-subtitle">
             CSV×DXエキスパートの育成で実現したいこと

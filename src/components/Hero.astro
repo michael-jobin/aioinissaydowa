@@ -1,7 +1,8 @@
 ---
 import Picture from './Picture.astro'
 const homeUrl = import.meta.env.BASE_URL
-const { copy, title, slug, index, color, isInterview, area, name, position, titleSp } = Astro.props
+const { copy, title, slug, index, color, isInterview, area, name, small, position, titleSp } =
+  Astro.props
 ---
 
 <section class="hero inview fadeIn">
@@ -37,6 +38,7 @@ const { copy, title, slug, index, color, isInterview, area, name, position, titl
           </span>
         ))
       }
+      {small && <span class="hero__text-small">{small}</span>}
     </h1>
   </div>
   {

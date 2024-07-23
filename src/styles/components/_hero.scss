@@ -67,7 +67,7 @@
     display: flex;
     width: fit-content;
     align-items: center;
-    padding: vw(2px) vw(24px) vw(10px) vw(24px);
+    padding: vw(5px) vw(24px) vw(10px) vw(24px);
     color: #fff;
     font-size: vw(44px);
     font-weight: 600;
@@ -92,6 +92,23 @@
       @include pc {
         display: none;
       }
+    }
+  }
+  &__text-small {
+    background-color: $color1;
+    display: block;
+    color: #fff;
+    font-size: vw(16px);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.016rem;
+    padding: 0 0 vw(15px) vw(25px);
+    margin-top: vw(-7px);
+    @include sp {
+      font-size: 1.3rem;
+      padding: 0 1rem 1rem 1.7rem;
+      letter-spacing: 0.014rem;
+      display: inline-block;
     }
   }
   //interview box
