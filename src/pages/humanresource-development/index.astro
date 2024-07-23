@@ -5,6 +5,7 @@ import FixedLink from '../../components/FixedLink.astro'
 import Hero from '../../components/Hero.astro'
 import Introduction from '../../sections/areas/Introduction.astro'
 import Picture from '../../components/Picture.astro'
+import ArrowTop from '../../components/icons/ArrowTop.astro'
 const homeUrl = import.meta.env.BASE_URL
 
 const area = getAreaFromUrl(Astro.request.url)
@@ -27,7 +28,7 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
 
   <Introduction copy1={area.copy1} copy2={area.copy2} />
 
-  <section class="details inview fadeIn">
+  <section class="details custom-layout inview fadeIn">
     <h2 class={`details__title category-bg ${color}`}>主な取り組み</h2>
     <div class={`details__inner ${color}`}>
       <div class="details__container">
@@ -52,8 +53,11 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
               CSV×DXエキスパートは全社員のCSV×DX取り組みのフロントランナーを担う人財（選抜型）です。その中でもイノベーション人財は、各部支店における地域社会課題を率先して解決し、「ＣＳＶ×ＤＸ」を実現に導く役割を担います。<br
               />部支店から選抜されたイノベーション人財に対しては、専門的な知識やスキルの習得、挑戦する機会の提供を集中して行うことで、当社の成長戦略を牽引する人財を育成します。
             </p>
-            <p class="details__text-anchorlink">
-              CSV×DXエキスパートの概要はこちら
+            <p class="details__anchorlink">
+              <a href="#anchorlink-CSVDX">
+                CSV×DXエキスパートの<br class="sp" />概要はこちら
+                <span><ArrowTop/></span>
+              </a>
             </p>
           </div>
           <div class="details__text-item">
@@ -125,7 +129,7 @@ const color = area.category === '人財の強化' ? 'category1' : 'category2'
     </div>
   </section>
 
-  <section class="figure">
+  <section id="anchorlink-CSVDX" class="figure">
     <div class="figure__container figure__inner">
       <h2 class="figure__title">
         <img src={`${homeUrl}assets/images/common/sub-title-line.svg`} alt="縦線" width="6" height="22">
