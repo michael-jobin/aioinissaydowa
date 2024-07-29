@@ -45,7 +45,7 @@
   }
   &__text {
     width: calc(100% - 12rem);
-    padding: 1.6rem 0 1rem 2.2rem;
+    padding: 1.6rem 2.2rem 1rem 2.2rem;
     position: relative;
     @include sp {
       width: calc(100% - 9.2rem);
@@ -69,7 +69,6 @@
     letter-spacing: 0.015rem;
     display: inline;
     position: relative;
-
     @include sp {
       font-size: 1.2rem;
       line-height: 1.8rem; /* 150% */

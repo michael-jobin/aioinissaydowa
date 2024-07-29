@@ -1,8 +1,10 @@
 ---
 import ArrowRight from '../components/icons/ArrowRight.astro'
 import Picture from '../components/Picture.astro'
+import { truncate } from '../utils/formatText.ts'
 const interview = Astro.props.interview
 const homeUrl = import.meta.env.BASE_URL
+const truncatedCopy1 = truncate(interview.copy1, 32)
 ---
 
 <aside class="fixedLink">
@@ -17,7 +19,7 @@ const homeUrl = import.meta.env.BASE_URL
     />
     <div class="fixedLink__text">
       <p class="fixedLink__text-index">Interview {interview.index}</p>
-      <p class="fixedLink__text-copy1 pre-line">{interview.copy1}</p>
+      <p class="fixedLink__text-copy1">{truncatedCopy1.replace(/\n/g, '')}</p>
       <p class="fixedLink__text-copy2">{interview.copy2}</p>
       <p class="fixedLink__text-arrow">
         <span>社員の声を聞く</span>
