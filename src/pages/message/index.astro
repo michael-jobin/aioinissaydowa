@@ -2,23 +2,23 @@
 import Layout from '../../layouts/Layout.astro'
 import Hero from '../../components/Hero.astro'
 import Picture from '../../components/Picture.astro'
+import Introduction from '../../sections/areas/Introduction.astro'
 const homeUrl = import.meta.env.BASE_URL
 ---
 
-<Layout title="ダミー" description="ダミーダミーダミーダミーダミーダミー">
-  <Hero
-    copy="人的資本経営を目指す未来"
-    title="トップメッセージ"
-    slug="message"
-    color="color1"
-    small="（人事担当役員）"
+<Layout
+  title="当社が取り組む理由｜人的資本経営｜あいおいニッセイ同和損害保険株式会社"
+  description="あいおいニッセイ同和損保の人的資本経営に関するサイトです。当社の人的資本経営にかける想いについて、人事担当役員の声をお届けします。"
+>
+  <Hero copy="人的資本経営で目指す未来" title="当社が取り組む理由" slug="message" color="color1" />
+
+  <Introduction
+    copy1="「人事部担当役員」が語る当社の「人的資本経営」とは"
+    copy2="人事部担当役員から、あいおいニッセイ同和損保の人的資本経営の目指す姿\n「Advance for myself, Design the future 私が、つくる。新たなミライ」に込めた思いや、目指す姿についてご説明しています。"
   />
 
   <section class="video inview fadeIn">
     <div class="video__container">
-      <p class="video__textArea">
-        動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。動画についての概要テキストが入ります。
-      </p>
       <div class="video__play">
         <button class="video__btn" type="button" aria-label="play">
           <img
@@ -38,18 +38,18 @@ const homeUrl = import.meta.env.BASE_URL
         />
       </div>
     </div>
-    <div class="video__modal">
+    <!-- <div class="video__modal">
       <div class="modal__overlay">
         <i class="modal__closeBtn"></i>
       </div>
       <iframe
-        src="https://player.vimeo.com/video/258181502?h=bd0ca6e02e&autoplay=1&title=0&byline=0&portrait=0"
+        src="https://player.vimeo.com/video/992562326?h=bd0ca6e02e&autoplay=1&title=0&byline=0&portrait=0"
         width="100%"
         height="100%"
         frameborder="0"
         allow="fullscreen; picture-in-picture"
         allowfullscreen></iframe>
-    </div>
+    </div> -->
   </section>
 </Layout>
 
@@ -57,18 +57,41 @@ const homeUrl = import.meta.env.BASE_URL
   import { gsap } from 'gsap'
 
   const openButton = document.querySelector('.video__btn')
-  const closeButton = document.querySelector('.modal__overlay')
-  const modal = document.querySelector('.video__modal')
 
-  const openMenu = () => {
+  const closeModal = () => {
+    const modal = document.querySelector('.video__modal')
+    const tl = gsap.timeline({
+      onComplete: () => {
+        modal?.remove()
+      },
+    })
+    tl.to(modal, { opacity: 0, duration: 0.5 })
+  }
+
+  const openModal = () => {
+    const modalHTML = `
+    <div class="video__modal">
+      <div class="modal__overlay">
+        <i class="modal__closeBtn"></i>
+      </div>
+      <iframe
+        src="https://player.vimeo.com/video/992562326?h=bd0ca6e02e&autoplay=1&title=0&byline=0&portrait=0"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        allow="fullscreen; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  `
+    document.body.insertAdjacentHTML('beforeend', modalHTML)
+
+    const modal = document.querySelector('.video__modal')
+    const closeButton = document.querySelector('.modal__overlay')
+
+    closeButton?.addEventListener('click', closeModal)
+
     const tl = gsap.timeline()
     tl.set(modal, { display: 'block' }).to(modal, { opacity: 1, duration: 0.5 })
   }
-  const closeMenu = () => {
-    const tl = gsap.timeline()
-    tl.to(modal, { opacity: 0, duration: 0.5 }).set(modal, { display: 'none' })
-  }
-
-  openButton?.addEventListener('click', openMenu)
-  closeButton?.addEventListener('click', closeMenu)
+  openButton?.addEventListener('click', openModal)
 </script>

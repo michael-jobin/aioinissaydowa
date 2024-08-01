@@ -6,16 +6,16 @@
       max-width: 32.7rem;
     }
   }
-  &__textArea {
-    padding: 14rem 0 10rem;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 3.2rem; /* 200% */
-    @include sp {
-      padding: 7.2rem 0 4.8rem;
-    }
-  }
+  // &__textArea {
+  //   padding: 14rem 0 10rem;
+  //   font-size: 1.6rem;
+  //   font-style: normal;
+  //   font-weight: 400;
+  //   line-height: 3.2rem; /* 200% */
+  //   @include sp {
+  //     padding: 7.2rem 0 4.8rem;
+  //   }
+  // }
 
   //----- 動画再生前 -----//
   &__play {
