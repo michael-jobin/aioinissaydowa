@@ -1,16 +1,48 @@
+---
+const homeUrl = import.meta.env.BASE_URL
+---
+
 <section class="mission inview fadeIn">
   <div class="mission__container">
     <div class="mission__titleArea">
       <h2 class="mission__titleArea-title">Our Mission</h2>
       <p class="mission__titleArea-copy">私たちのミッション</p>
+      <article class="mission__banner pc">
+        <a href="message/">
+          <picture>
+            <source srcset={`${homeUrl}assets/images/home/mission_img01.webp`} type="image/webp" />
+            <img
+              src={`${homeUrl}assets/images/home/mission_img01.png`}
+              alt="当社が取り組む理由人事部担当役員メッセージ"
+              width="800"
+              height="320"
+            />
+          </picture>
+        </a>
+      </article>
     </div>
     <div class="mission__textArea">
       <p class="mission__textArea-text">
-        当社では、人財を最重要の経営資本と位置付け、人的資本経営に取り組んでいます。<br />
-        私たちは、人的資本経営の目指す姿を「Advance for myself, Design the future 私が、つくる。新たなミライ」と定め、社員一人ひとりの成長を会社の成長につなげていくことを目指しています。<br
-        />「ＣＳＶ×ＤＸ」の実践を通じて、お客さま、地域・社会の課題を解決することで、新たな信頼関係を構築していきます。<br
-        />その先には、「活力ある社会の発展と地球の健やかな未来を支える」という私たちのミッションの実現があると確信しています。
+        当社では、人財を最重要の経営資本と位置付け、人的資本経営に取り組んでいます。私たちは、人的資本経営の目指す姿を「Advance
+        for myself, Design the future
+        私が、つくる。新たなミライ」と定め、社員一人ひとりの成長を会社の成長につなげていくことを目指しています。「ＣＳＶ×ＤＸ」の実践を通じて、お客さま、地域・社会の課題を解決することで、新たな信頼関係を構築していきます。その先には、「活力ある社会の発展と地球の健やかな未来を支える」という私たちのミッションの実現があると確信しています。
       </p>
+      <article class="mission__banner sp">
+        <a href="message/">
+          <picture>
+            <source
+              srcset={`${homeUrl}assets/images/home/mission_img01_sp.webp`}
+              type="image/webp"
+            />
+            <img
+              src={`${homeUrl}assets/images/home/mission_img01_sp.png`}
+              alt="当社が取り組む理由人事部担当役員メッセージ"
+              width="654"
+              height="320"
+            />
+          </picture>
+        </a>
+      </article>
     </div>
   </div>
 </section>
